@@ -1,0 +1,114 @@
+{
+  "source": "https://posmm.vercel.app/",
+  "name": "Аполлинария Пилипюк",
+  "role": "SMM-специалист",
+  "portrait": "assets/437ba606640120550a74075f9a9db980c195cada-DyD845R5.webp",
+  "about": [
+    "Я — SMM-специалист с опытом работы в продвижении брендов в разных сферах: от нефтегазовой отрасли и IT-инфраструктуры до автосервиса, детейлинга, моды и образования.",
+    "Моя задача — создавать контент, который работает на результат: формирует доверие к бренду, увеличивает охваты и привлекает клиентов."
+  ],
+  "values": [
+    "Разные ниши: от тяжёлой техники и масел до моды и спорта.",
+    "Контент под каждую аудиторию: экспертный, дружеский, lifestyle или технический.",
+    "Упор на результат: рост вовлечённости, доверия и узнаваемости бренда."
+  ],
+  "projects": [
+    {
+      "name": "LUKOIL",
+      "handle": "lukoil.lubricants.kz",
+      "url": "https://instagram.com/lukoil.lubricants.kz",
+      "description": "Фирменные масла и смазочные материалы для легковых, грузовых авто и спецтехники.",
+      "focus": "Фокус: надёжность продукции, новинки масел, акции и открытие новых ПЗМ (пунктов замены масел).",
+      "screenshot": "assets/316f2a05f1b8e51c9eb01203f06930e023dbfe04-DqPgt9ul.webp",
+      "logo": null,
+      "images": [],
+      "videos": [
+        "assets/IMG_0483-o6iy6Pyc.webm",
+        "assets/%D0%9B%D1%83%D0%BA%D0%BE%D0%B9%D0%BB%20%D0%A4%D0%B8%D0%BD%D0%B0%D0%BB-YVy4uHSI.webm",
+        "assets/IMG_0080-C--UFBQF.webm",
+        "assets/IMG_0085-Cd6om0Gc.webm"
+      ]
+    },
+    {
+      "name": "PUMA",
+      "handle": "puma_fam_kz",
+      "url": "https://www.instagram.com/puma_fam_kz",
+      "description": "Международный спортивный бренд.",
+      "focus": "Фокус: спортивная экипировка, локальные кампании и коллаборации в Казахстане.",
+      "screenshot": "assets/14511b728626cf952cf425287792dd06055ea5df-D9E-tDb8.webp",
+      "logo": "assets/958e63ec4f23278dddfc41ab7dc54938e8103cf6-UvRU5GIK.webp",
+      "images": [
+        "assets/673cc019bebd12261cf643673fe573db9dd637ec-DEXqBcCP.webp",
+        "assets/c7cf3708bd008755fbfb1cd314dbbcfee66823e5-DK0c0UM4.webp",
+        "assets/972cb32632f7d3b20210777fd2046f72e3d2dc55-Cev5benq.webp"
+      ],
+      "videos": [
+        "assets/IMG_4105-yCaGBWHl.webm",
+        "assets/%D0%A4%D0%B8%D0%BD%D0%B0%D0%BB-VFM7T_qk.webm",
+        "assets/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F%202-BzYO51EY.webm",
+        "assets/%D0%A1%D0%BE%D1%84%D0%B0-rpIobQyY.webm",
+        "assets/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F%204-ydooA26K.webm",
+        "assets/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F%205_1-DBh3EZ7P.webm"
+      ]
+    },
+    {
+      "name": "DISKOKRAS",
+      "handle": "Diskokras.kz",
+      "url": "https://www.instagram.com/Diskokras.kz",
+      "description": "Ремонт, покраска и восстановление автомобильных дисков, а также шины.",
+      "focus": "Фокус: до/после, уникальные технологии реставрации, практические советы по уходу.",
+      "screenshot": "assets/538283d76957e6dee3d4566f655e9217a8c749de-BSEkWbpt.webp",
+      "logo": null,
+      "images": [],
+      "videos": []
+    },
+    {
+      "name": "NSCom",
+      "handle": "nscom.kz",
+      "url": "https://instagram.com/nscom.kz",
+      "description": "IT-интегратор и дата-центр.",
+      "focus": "Фокус: цифровая трансформация, кибербезопасность, облачные решения и инфраструктура для бизнеса.",
+      "screenshot": "assets/d15427f5216926d3417cea79cbc91dc877772601-BUpJh0ai.webp",
+      "logo": "assets/044f2528992789c9c5cbafe99f8f4fdebc30e0c6-DJzoYb6H.webp",
+      "images": [],
+      "videos": []
+    },
+    {
+      "name": "Sankari Motors",
+      "handle": "sankarimotors",
+      "url": "https://www.instagram.com/sankarimotors",
+      "description": "Официальный дистрибьютор японской спецтехники и погрузчиков в Казахстане.",
+      "focus": "Фокус: надёжность японской техники, выгода для бизнеса, наличие на складе.",
+      "screenshot": "assets/6438b05caee0f7fea82384c1785abe6547b6b3ca-B6cqo67h.webp",
+      "logo": "assets/e6abc99856300b9d7298425d0514afbdc0e8b065-Tx_w_FYb.webp",
+      "images": [],
+      "videos": []
+    },
+    {
+      "name": "Klimakin Motoschool",
+      "handle": "Klimakin_motoschool",
+      "url": "https://www.instagram.com/Klimakin_motoschool",
+      "description": "Мотошкола: обучение вождению мотоциклов.",
+      "focus": "Фокус: безопасность, опыт инструкторов, комьюнити байкеров.",
+      "screenshot": "assets/c41dfa21052148252a8632157da032cbf07edf95-eorJhN-8.webp",
+      "logo": null,
+      "images": [],
+      "videos": []
+    },
+    {
+      "name": "Alexandr Kuguyenko",
+      "handle": "Alexandr.kuguyenko",
+      "url": "https://www.instagram.com/Alexandr.kuguyenko",
+      "description": "Личный бренд в логистике: продвижение услуг, экспертный имидж.",
+      "focus": "Фокус: деловой стиль, экспертность, клиентские кейсы.",
+      "screenshot": "assets/92f39cc0318b0f3ecd44fc6f4ff3cbfe3e07896c-BEuIEigX.webp",
+      "logo": null,
+      "images": [],
+      "videos": []
+    }
+  ],
+  "contacts": {
+    "whatsapp": "https://wa.me/77478831903",
+    "telegram": "https://t.me/le_eon"
+  }
+}
