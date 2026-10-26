@@ -1,0 +1,186 @@
+{
+  "provider": "Tinify (TinyPNG)",
+  "service": "https://tinypng.com/",
+  "date": "2026-10-27",
+  "method": "Official web compressor; PNG converted to WebP; existing WebP compressed",
+  "images": [
+    {
+      "input": "assets/media/alexandr-kuguyenko-profile.webp",
+      "output": "assets/media/alexandr-kuguyenko-profile.webp",
+      "before_bytes": 165528,
+      "after_bytes": 161044,
+      "dimensions": [
+        1260,
+        2800
+      ],
+      "sha256": "77a166016382cad10e040b9af74e695c267726bf6b91390b0bd1c27bf41887d2"
+    },
+    {
+      "input": "assets/media/apollinaria-pilipyuk.webp",
+      "output": "assets/media/apollinaria-pilipyuk.webp",
+      "before_bytes": 77926,
+      "after_bytes": 69812,
+      "dimensions": [
+        1396,
+        1980
+      ],
+      "sha256": "e67625058576cd44e09560a5fb604fb58251b582b05fd01850eee7bab70e4119"
+    },
+    {
+      "input": "assets/media/diskokras-profile.webp",
+      "output": "assets/media/diskokras-profile.webp",
+      "before_bytes": 186738,
+      "after_bytes": 182422,
+      "dimensions": [
+        1260,
+        2800
+      ],
+      "sha256": "fcc74b513cd8ba29ae1f766b305052be46cc6f19524fe0e4d946daa2a54f5ebc"
+    },
+    {
+      "input": "assets/media/klimakin-motoschool-profile.webp",
+      "output": "assets/media/klimakin-motoschool-profile.webp",
+      "before_bytes": 169964,
+      "after_bytes": 165710,
+      "dimensions": [
+        1260,
+        2800
+      ],
+      "sha256": "78585358115c3239c4f92469b0227a449e6985507285a3ca630b4520eea0dba1"
+    },
+    {
+      "input": "assets/media/lukoil-profile.webp",
+      "output": "assets/media/lukoil-profile.webp",
+      "before_bytes": 179014,
+      "after_bytes": 175190,
+      "dimensions": [
+        1260,
+        2800
+      ],
+      "sha256": "5baa2ff542fb3a25966e6ad4d4f283385f1ade8e635e120d98b5613cd47078f1"
+    },
+    {
+      "input": "assets/media/nscom-logo.webp",
+      "output": "assets/media/nscom-logo.webp",
+      "before_bytes": 40910,
+      "after_bytes": 38306,
+      "dimensions": [
+        496,
+        368
+      ],
+      "sha256": "169542207e8eb55107a2b4b1ed246458ab3a5f0aaa40148ee5fcfe4f34f86b92"
+    },
+    {
+      "input": "assets/media/nscom-profile.webp",
+      "output": "assets/media/nscom-profile.webp",
+      "before_bytes": 158750,
+      "after_bytes": 155432,
+      "dimensions": [
+        1260,
+        2800
+      ],
+      "sha256": "f8a508be2f1cef356c0d051a91e5148bbb408d47fb643f2fcddbf2ecd8dab497"
+    },
+    {
+      "input": "assets/media/puma-logo.webp",
+      "output": "assets/media/puma-logo.webp",
+      "before_bytes": 10036,
+      "after_bytes": 5828,
+      "dimensions": [
+        800,
+        408
+      ],
+      "sha256": "de1ef7a2afb655896988a157b28895323f62b2e84e87ff9d8b648c4b14fdb4f0"
+    },
+    {
+      "input": "assets/media/puma-post-1.webp",
+      "output": "assets/media/puma-post-1.webp",
+      "before_bytes": 108372,
+      "after_bytes": 105174,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "sha256": "f25a5a316c678e840b3f219cd2826e7cf75de2917b985089d22093ae8acb5650"
+    },
+    {
+      "input": "assets/media/puma-post-2.webp",
+      "output": "assets/media/puma-post-2.webp",
+      "before_bytes": 276652,
+      "after_bytes": 273506,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "sha256": "d5a8dc4d3ac8f0511880c331f04f718477dcb1a636ca00396618c13090a6bd29"
+    },
+    {
+      "input": "assets/media/puma-post-3.webp",
+      "output": "assets/media/puma-post-3.webp",
+      "before_bytes": 134926,
+      "after_bytes": 130382,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "sha256": "0709d63d2c7a1d5bc2140575e68ae7a7b94711c3d74578afaa102dc8a80884e4"
+    },
+    {
+      "input": "assets/media/puma-profile.webp",
+      "output": "assets/media/puma-profile.webp",
+      "before_bytes": 164830,
+      "after_bytes": 161662,
+      "dimensions": [
+        1260,
+        2800
+      ],
+      "sha256": "b596f383fa46fa7034e80ae4c722eeecce5c5f0e35580235786f2a4422587205"
+    },
+    {
+      "input": "assets/media/sankari-motors-logo.webp",
+      "output": "assets/media/sankari-motors-logo.webp",
+      "before_bytes": 18438,
+      "after_bytes": 18274,
+      "dimensions": [
+        983,
+        281
+      ],
+      "sha256": "dc9a7696e12850e4cd668cd3aa80806a1feed1d084dd9772b31b6ceed6c39e31"
+    },
+    {
+      "input": "assets/media/sankari-motors-profile.webp",
+      "output": "assets/media/sankari-motors-profile.webp",
+      "before_bytes": 217042,
+      "after_bytes": 211878,
+      "dimensions": [
+        1260,
+        2800
+      ],
+      "sha256": "e0e1f62a8f8b1204442d606b9c9b80115b4f19580ed51af0a03be4bb6e659068"
+    },
+    {
+      "input": "assets/images/lightning.png",
+      "output": "assets/images/lightning.webp",
+      "before_bytes": 245678,
+      "after_bytes": 78272,
+      "dimensions": [
+        2550,
+        2550
+      ],
+      "sha256": "e3a7afe3c0c1ab6f8a153d81fb49b7914fd92e79b4a0894aa5591863d4c4248a"
+    },
+    {
+      "input": "assets/images/star.png",
+      "output": "assets/images/star.webp",
+      "before_bytes": 213416,
+      "after_bytes": 76112,
+      "dimensions": [
+        2550,
+        2550
+      ],
+      "sha256": "e527873649b02b1315a8f87987b85d386c724f60025139afb4b39f967595137c"
+    }
+  ],
+  "before_bytes": 2368220,
+  "after_bytes": 2009004
+}

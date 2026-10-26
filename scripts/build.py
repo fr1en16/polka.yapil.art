@@ -10,6 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'source-content'
 DATA = json.loads((SOURCE / 'content.json').read_text())
 TEMPLATE = (ROOT / 'ksu/index.html').read_text()
+OPTIMIZATION_FILE = SOURCE / 'image-optimization.json'
+OPTIMIZED_IMAGES = {
+    item['output'] for item in json.loads(OPTIMIZATION_FILE.read_text())['images']
+} if OPTIMIZATION_FILE.exists() else set()
 
 def esc(value):
     return html.escape(str(value), quote=True)
@@ -19,6 +23,10 @@ def copy_media(path, name):
     # Some original .webm assets actually contain MP4; use the correct extension.
     extension = '.mp4' if source.read_bytes()[4:8] == b'ftyp' else source.suffix
     target = ROOT / 'assets/media' / (name + extension)
+    if target.relative_to(ROOT).as_posix() in OPTIMIZED_IMAGES:
+        if not target.is_file():
+            raise FileNotFoundError('Missing Tinify image: ' + str(target))
+        return '/assets/media/' + target.name
     target.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(source, target)
     return '/assets/media/' + target.name
@@ -49,12 +57,11 @@ for rule in re.findall(r'@font-face\s*\{[^}]+\}', TEMPLATE):
     font_rules.append(rule.replace('assets/fonts/', './fonts/'))
 (ROOT / 'assets/fonts.css').write_text('\n'.join(font_rules) + '\n')
 
-for source_name, target_name in [('image-1e0332b5.png_width=2550&height=2550.png', 'star.png'), ('image-e5f0c58d.png_width=2550&height=2550.png', 'lightning.png')]:
-    source_path = ROOT / 'ksu/assets/images' / source_name
-    if not source_path.exists():
-        candidates = list((ROOT / 'ksu/assets/images').glob(source_name.split('.png')[0] + '*'))
-        source_path = candidates[0]
-    shutil.copyfile(source_path, ROOT / 'assets/images' / target_name)
+for target_name in ['star.webp', 'lightning.webp']:
+    target_path = ROOT / 'assets/images' / target_name
+    # WebP conversion is performed by Tinify; do not rename an original PNG.
+    if not target_path.is_file():
+        raise FileNotFoundError('Missing Tinify WebP: ' + str(target_path))
 
 ARROW = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 WHATSAPP = DATA['contacts']['whatsapp']
@@ -97,7 +104,7 @@ def document(title, description, body, path):
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f8f7f3"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:image" content="{portrait}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/motion.css"><script src="/assets/site.js" defer></script></head><body>{header()}<main id="main">{body}</main>{footer()}</body></html>'''
     (ROOT / path).write_text(output + '\n')
 
-hero = '''<section class="hero" id="hero-section" aria-labelledby="hero-title"><div class="container hero-inner"><img class="hero-shape star" src="/assets/images/star.png" alt="" width="160" height="160" draggable="false"><img class="hero-shape lightning" src="/assets/images/lightning.png" alt="" width="140" height="140" draggable="false"><h1 id="hero-title"><span>BRAND</span> <span>CONTENT</span></h1><div class="hero-bottom"><span class="hero-year">©2026</span><span class="hero-name">/АПОЛЛИНАРИЯ ПИЛИПЮК</span></div></div></section>'''
+hero = '''<section class="hero" id="hero-section" aria-labelledby="hero-title"><div class="container hero-inner"><img class="hero-shape star" src="/assets/images/star.webp" alt="" width="160" height="160" draggable="false"><img class="hero-shape lightning" src="/assets/images/lightning.webp" alt="" width="140" height="140" draggable="false"><h1 id="hero-title"><span>BRAND</span> <span>CONTENT</span></h1><div class="hero-bottom"><span class="hero-year">©2026</span><span class="hero-name">/АПОЛЛИНАРИЯ ПИЛИПЮК</span></div></div></section>'''
 about = f'''<section class="about section" id="bio-section"><div class="container about-layout"><div class="about-intro"><h2>Обо мне.</h2><p class="intro-name">Аполлинария<br>Пилипюк</p><span class="eyebrow">/SMM-специалист</span></div><div class="about-copy"><p class="lead">{esc(DATA['about'][0])}</p><a class="text-link" href="#projects">Смотреть проекты<span class="arrow-box">{ARROW}</span></a></div></div></section>'''
 portrait_scene = f'''<div class="portrait-track"><div class="portrait-sticky"><div class="portrait-enter"><div class="portrait-card"><div class="portrait-face portrait-front"><img src="{portrait}" alt="Аполлинария Пилипюк" width="1396" height="1980" fetchpriority="high"></div><div class="portrait-face portrait-back" aria-hidden="true"><img src="{portrait}" alt="" width="1396" height="1980"></div></div></div></div></div>'''
 intro_scene = '<div class="intro-scene">' + portrait_scene + hero + about + '</div>'
