@@ -4,10 +4,11 @@ import path from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'dist');
-const files = ['index.html', 'work.html'];
+const htmlFiles = ['index.html', 'work.html'];
+const files = [...htmlFiles, 'robots.txt', 'sitemap.xml', 'video-sitemap.xml'];
 const directories = ['assets', 'work'];
 
-for (const file of files) {
+for (const file of htmlFiles) {
   const html = await readFile(path.join(root, file), 'utf8');
   if (!html.includes('Аполлинария Пилипюк')) throw new Error(`Unexpected page: ${file}`);
 }
@@ -21,13 +22,13 @@ for (const entry of [...files, ...directories]) {
 }
 
 // Check deployed HTML references, including assets on nested project pages.
-const pages = [...files, ...(await readdir(path.join(output, 'work')))
+const pages = [...htmlFiles, ...(await readdir(path.join(output, 'work')))
   .filter(file => file.endsWith('.html')).map(file => `work/${file}`)];
 for (const page of pages) {
   const html = await readFile(path.join(output, page), 'utf8');
-  for (const match of html.matchAll(/(?:src|href)="(\/[^"]*)"/g)) {
+  for (const match of html.matchAll(/(?:src|href|poster)="(\/[^"]*)"/g)) {
     const asset = match[1].split(/[?#]/)[0];
-    if (!(await stat(path.join(output, asset))).isFile()) {
+    if (!(await stat(path.join(output, asset === '/' ? 'index.html' : asset))).isFile()) {
       throw new Error(`Missing asset ${asset} in ${page}`);
     }
   }

@@ -1,5 +1,17 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "cleanUrls": false
+  "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "polka-yapil-art.vercel.app" }],
+      "destination": "https://polka.yapil.art/:path*",
+      "permanent": true
+    },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/assets/media/puma-video-1.webm", "destination": "/assets/media/puma-video-1.mp4", "permanent": true },
+    { "source": "/assets/media/puma-video-2.webm", "destination": "/assets/media/puma-video-2.mp4", "permanent": true },
+    { "source": "/assets/media/puma-video-4.webm", "destination": "/assets/media/puma-video-4.mp4", "permanent": true }
+  ]
 }

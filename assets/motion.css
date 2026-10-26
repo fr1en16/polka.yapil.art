@@ -74,3 +74,5 @@ a:hover > .roll-label .roll-char, a:focus-visible > .roll-label .roll-char { tra
   .roll-char { transform: none !important; }
   .scroll-word { color: var(--ink) !important; }
 }
+/* Keep the duration readable without requesting video metadata on page load. */
+.gallery-video figcaption{display:flex;justify-content:space-between;gap:1rem}

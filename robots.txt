@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://polka.yapil.art/sitemap.xml
+Sitemap: https://polka.yapil.art/video-sitemap.xml
