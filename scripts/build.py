@@ -12,8 +12,9 @@ DATA = json.loads((SOURCE / 'content.json').read_text())
 TEMPLATE = (ROOT / 'ksu/index.html').read_text()
 OPTIMIZATION_FILE = SOURCE / 'image-optimization.json'
 OPTIMIZED_IMAGES = {
-    item['output'] for item in json.loads(OPTIMIZATION_FILE.read_text())['images']
-} if OPTIMIZATION_FILE.exists() else set()
+    item['output']: item['sha256'][:12]
+    for item in json.loads(OPTIMIZATION_FILE.read_text())['images']
+} if OPTIMIZATION_FILE.exists() else {}
 
 def esc(value):
     return html.escape(str(value), quote=True)
@@ -102,6 +103,10 @@ def projects_section(all_work=False):
 def document(title, description, body, path):
     output = f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f8f7f3"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:image" content="{portrait}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/motion.css"><script src="/assets/site.js" defer></script></head><body>{header()}<main id="main">{body}</main>{footer()}</body></html>'''
+    # The custom domain uses Cloudflare caching. Version image URLs by content so
+    # a published optimization also reaches returning visitors immediately.
+    for image_path, version in OPTIMIZED_IMAGES.items():
+        output = output.replace('="/' + image_path + '"', '="/' + image_path + '?v=' + version + '"')
     (ROOT / path).write_text(output + '\n')
 
 hero = '''<section class="hero" id="hero-section" aria-labelledby="hero-title"><div class="container hero-inner"><img class="hero-shape star" src="/assets/images/star.webp" alt="" width="160" height="160" draggable="false"><img class="hero-shape lightning" src="/assets/images/lightning.webp" alt="" width="140" height="140" draggable="false"><h1 id="hero-title"><span>BRAND</span> <span>CONTENT</span></h1><div class="hero-bottom"><span class="hero-year">©2026</span><span class="hero-name">/АПОЛЛИНАРИЯ ПИЛИПЮК</span></div></div></section>'''
